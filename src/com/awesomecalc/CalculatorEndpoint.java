@@ -1,10 +1,11 @@
 package com.awesomecalc;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
+
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -35,7 +36,8 @@ public class CalculatorEndpoint {
     private void broadcast(String message)  {
         for (CalculatorEndpoint client : calculatorEndpointList) {
             try {
-                InputData inputData = new ObjectMapper().readValue(message, InputData.class);
+            	Gson g = new Gson(); 
+            	InputData inputData = g.fromJson(message, InputData.class);
                 System.out.println(inputData.getResult());
                 client.session.getBasicRemote().sendText(inputData.getResult());
             } catch (IOException e) {
