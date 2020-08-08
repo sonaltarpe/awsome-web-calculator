@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -jar target/awsome-web-calculator --port $PORT target/*.war
