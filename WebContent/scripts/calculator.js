@@ -58,7 +58,7 @@ CalculatorClient.connect = (host) =>{
 };
 
 CalculatorClient.initialize = () =>{
-    const ep = '/awsome-web-calculator/websocket/calculate';
+    const ep = '/websocket/calculate';
     if(window.location.protocol == 'http:'){
         CalculatorClient.connect('ws://' + window.location.host + ep);
     } else{
