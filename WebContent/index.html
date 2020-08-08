@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>Awesome Calculator</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding:5%;
+
+        }
+
+        .user-input-container {
+            border: 1px solid black;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #e0e0eb;
+            flex: 1;
+            margin-top:10px;
+        }
+        .user-input-item{
+            margin: 20px 0px;
+        }
+
+        
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="user-join-container">
+         <h2>Welcome to online calculator!</h2>
+         <input type="text" id="user-name">
+         <button id="join"><b>Join</b></button>
+    </div>
+     <div class="user-input-show">
+         <h3>Welcome <span id="joined-user"></span>!</h3>
+    </div>
+    <div class="user-input-container">
+        <div class="user-input-item">
+            <input type="number" id="left-value">
+        </div>
+        <div class="user-input-item">
+            <select id="operator">
+                <option value="+">Add (+)</option>
+                <option value="-">Sub (-)</option>
+                <option value="/">Mul (*)</option>
+                <option value="*">Div (/)</option>
+            </select>
+        </div>
+        <div class="user-input-item">
+            <input type="number" id="right-value">
+        </div>
+
+        <div class="user-input-item">
+            <button class="user-btn-calculate" id="calculate">Calculate</button>
+        </div>
+    </div>
+    <div class="result-container">
+          <h3>Latest 10 calculations by connected users</h3>
+        <ul id="result">
+        </ul>
+    </div>
+</div>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/calculator.js"></script>
+</body>
+</html>
